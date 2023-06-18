@@ -1,5 +1,6 @@
 import React from "react";
 import { EventBusContext } from "@/plugins/bus/EventBusProvider";
+import AnchorLink from "@/components/AnchorLink";
 import style from "./HomeHeader.module.scss";
 
 const HomeHeader: React.FC = () => {
@@ -12,7 +13,8 @@ const HomeHeader: React.FC = () => {
   return (
     <header className={style.header}>
       <div>Header</div>
-      <button onClick={onClick}>EventBus</button>
+      <AnchorLink path="/products">Products</AnchorLink>
+      <button onClick={onClick}>Event Bus</button>
     </header>
   );
 };
