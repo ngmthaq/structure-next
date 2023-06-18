@@ -1,12 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-const BaseLayout: React.FC<BaseLayoutPropType> = ({
-  title,
-  description,
-  image,
-  children,
-}) => {
+const BaseLayout: React.FC<BaseLayoutPropType> = ({ title, description, image, children }) => {
   return (
     <React.Fragment>
       <Head>

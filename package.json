@@ -22,6 +22,9 @@
     "@types/react-dom": "18.2.5",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.6",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8",
     "sass": "^1.63.4",
     "scss": "0.2.4",
     "typescript": "5.1.3"
