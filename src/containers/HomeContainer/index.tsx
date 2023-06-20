@@ -4,7 +4,7 @@ import { EventBusContext } from "@/plugins/bus/EventBusProvider";
 import { HomeContainerContext, HomeContainerProvider } from "./HomeContainer.context";
 import style from "./HomeContainer.module.scss";
 
-const HomeContainer: React.FC<HomeContainerPropType> = () => {
+const HomeContainer: React.FC<HomeContainerPropType> = ({ name }) => {
   const EventBus = React.useContext(EventBusContext);
   const {} = React.useContext(HomeContainerContext);
 
@@ -21,7 +21,7 @@ const HomeContainer: React.FC<HomeContainerPropType> = () => {
   return (
     <BaseLayout title="Create Next App" description="The most important thing is how the snippet looks." image="/favicon.ico">
       <HomeContainerProvider>
-        <h1 className={style.heading}>Main</h1>
+        <h1 className={style.heading}>Helo {name}</h1>
         <i className="bi bi-alarm-fill"></i>
       </HomeContainerProvider>
     </BaseLayout>
@@ -30,4 +30,6 @@ const HomeContainer: React.FC<HomeContainerPropType> = () => {
 
 export default HomeContainer;
 
-export type HomeContainerPropType = {};
+export type HomeContainerPropType = {
+  name: string;
+};
