@@ -2,11 +2,11 @@ import React from "react";
 import BaseLayout from "@/layouts/BaseLayout";
 import { EventBusContext } from "@/plugins/bus/EventBusProvider";
 import { HomeContainerContext, HomeContainerProvider } from "./HomeContainer.context";
-import style from "./HomeContainer.module.scss";
 import HomeHeader from "./components/HomeHeader";
 import HomeFooter from "./components/HomeFooter";
+import style from "./HomeContainer.module.scss";
 
-const HomeContainer: React.FC = () => {
+const HomeContainer: React.FC<HomeContainerPropType> = () => {
   const EventBus = React.useContext(EventBusContext);
   const {} = React.useContext(HomeContainerContext);
 
@@ -33,3 +33,5 @@ const HomeContainer: React.FC = () => {
 };
 
 export default HomeContainer;
+
+export type HomeContainerPropType = {};
