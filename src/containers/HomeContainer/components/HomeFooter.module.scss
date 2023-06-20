@@ -1,0 +1,9 @@
+@import "../../../assets/variables";
+@import "../../../assets/mixins";
+
+.footer {
+  background-color: $secondary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

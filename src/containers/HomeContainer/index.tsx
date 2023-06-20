@@ -4,6 +4,7 @@ import { EventBusContext } from "@/plugins/bus/EventBusProvider";
 import { HomeContainerContext, HomeContainerProvider } from "./HomeContainer.context";
 import style from "./HomeContainer.module.scss";
 import HomeHeader from "./components/HomeHeader";
+import HomeFooter from "./components/HomeFooter";
 
 const HomeContainer: React.FC = () => {
   const EventBus = React.useContext(EventBusContext);
@@ -25,6 +26,7 @@ const HomeContainer: React.FC = () => {
         <HomeHeader />
         <h1 className={style.heading}>Main</h1>
         <i className="bi bi-alarm-fill"></i>
+        <HomeFooter />
       </HomeContainerProvider>
     </BaseLayout>
   );
