@@ -1,3 +1,5 @@
+import { AppConst } from "@/constants/app.const";
+import { eventBus } from "@/plugins/bus/EventBusProvider";
 import { SPINNER_LOADING_ID } from "@/components/SpinnerLoading";
 
 export class Element {
@@ -13,5 +15,13 @@ export class Element {
     if (element) {
       element.style.display = "none";
     }
+  }
+
+  public static openProgressLoading() {
+    eventBus.emit<boolean>(AppConst.eventBus.openProgressLoading, true);
+  }
+
+  public static closeProgressLoading() {
+    eventBus.emit<boolean>(AppConst.eventBus.openProgressLoading, false);
   }
 }

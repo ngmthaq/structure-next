@@ -5,6 +5,7 @@ import { AppProps } from "next/app";
 import store from "@/store";
 import { EventBusProvider } from "@/plugins/bus/EventBusProvider";
 import SpinnerLoading from "@/components/SpinnerLoading";
+import ProgressLoading from "@/components/ProgressLoading";
 import "bootstrap-icons/font/bootstrap-icons.scss";
 import "@/assets/style.scss";
 
@@ -15,6 +16,7 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <BootstrapProvider>
           <Component {...pageProps} />
           <SpinnerLoading />
+          <ProgressLoading />
         </BootstrapProvider>
       </EventBusProvider>
     </ReduxProvider>

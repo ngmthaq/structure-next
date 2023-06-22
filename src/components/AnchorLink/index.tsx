@@ -11,10 +11,12 @@ const AnchorLink: FC<AnchorLinkPropType> = ({ children, path, className, loading
       ref.current.addEventListener("click", (e) => {
         e.preventDefault();
         if (router.pathname !== path) {
-          if (loading) Element.openSpinnerLoading();
-          router.push(path).then(() => {
-            if (loading) Element.closeSpinnerLoading();
-          });
+          if (loading) Element.openProgressLoading();
+          setTimeout(() => {
+            router.push(path).then(() => {
+              if (loading) Element.closeProgressLoading();
+            });
+          }, 100);
         }
       });
     }

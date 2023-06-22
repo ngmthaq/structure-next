@@ -11,5 +11,7 @@ export class AppConst {
 
   public static localeConfigs = {};
 
-  public static eventBus = {};
+  public static eventBus = {
+    openProgressLoading: "openProgressLoading",
+  };
 }

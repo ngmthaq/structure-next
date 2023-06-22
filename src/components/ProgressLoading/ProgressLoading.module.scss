@@ -1,0 +1,17 @@
+@import "../../assets/variables";
+@import "../../assets/mixins";
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($color: $black, $alpha: 0.01);
+  z-index: $z-index-spinner-loading;
+  display: none;
+
+  & .loading {
+    height: 4px;
+  }
+}
