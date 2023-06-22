@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { Element } from "@/helpers/element.helper";
 
 const AnchorLink: React.FC<AnchorLinkPropType> = ({ children, path, className, loading }) => {
   const ref = React.createRef<HTMLAnchorElement>();
@@ -9,7 +10,10 @@ const AnchorLink: React.FC<AnchorLinkPropType> = ({ children, path, className, l
     if (ref.current) {
       ref.current.addEventListener("click", (e) => {
         e.preventDefault();
-        router.push(path).then(() => {});
+        Element.openSpinnerLoading();
+        router.push(path).then(() => {
+          Element.closeSpinnerLoading();
+        });
       });
     }
   }, [ref]);

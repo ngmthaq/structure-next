@@ -10,4 +10,6 @@ export class AppConst {
   public static customEvents = {};
 
   public static localeConfigs = {};
+
+  public static eventBus = {};
 }

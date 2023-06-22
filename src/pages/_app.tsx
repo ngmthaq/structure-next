@@ -4,6 +4,7 @@ import BootstrapProvider from "react-bootstrap/SSRProvider";
 import { AppProps } from "next/app";
 import store from "@/store";
 import { EventBusProvider } from "@/plugins/bus/EventBusProvider";
+import SpinnerLoading from "@/components/SpinnerLoading";
 import "bootstrap-icons/font/bootstrap-icons.scss";
 import "@/assets/style.scss";
 
@@ -13,6 +14,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
       <EventBusProvider>
         <BootstrapProvider>
           <Component {...pageProps} />
+          <SpinnerLoading />
         </BootstrapProvider>
       </EventBusProvider>
     </ReduxProvider>
