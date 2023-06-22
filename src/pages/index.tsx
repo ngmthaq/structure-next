@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import HomeContainer from "@/containers/HomeContainer";
 import { BaseApi } from "@/plugins/api/BaseApi";
@@ -10,7 +10,7 @@ export const getServerSideProps: GetServerSideProps<{ name: string }> = async ()
   return { props: { name: data.name } };
 };
 
-const Home: React.FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ name }) => {
+const Home: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ name }) => {
   return <HomeContainer name={name} />;
 };
 

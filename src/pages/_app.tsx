@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { Provider as ReduxProvider } from "react-redux";
 import BootstrapProvider from "react-bootstrap/SSRProvider";
 import { AppProps } from "next/app";
@@ -8,7 +8,7 @@ import SpinnerLoading from "@/components/SpinnerLoading";
 import "bootstrap-icons/font/bootstrap-icons.scss";
 import "@/assets/style.scss";
 
-const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <ReduxProvider store={store}>
       <EventBusProvider>

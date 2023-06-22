@@ -1,15 +1,15 @@
-import React from "react";
+import { FC, useContext, useEffect } from "react";
 import BaseLayout from "@/layouts/BaseLayout";
 import { EventBusContext } from "@/plugins/bus/EventBusProvider";
 import { HomeContainerContext, HomeContainerProvider } from "./HomeContainer.context";
 import style from "./HomeContainer.module.scss";
 import AnchorLink from "@/components/AnchorLink";
 
-const HomeContainer: React.FC<HomeContainerPropType> = ({ name }) => {
-  const EventBus = React.useContext(EventBusContext);
-  const {} = React.useContext(HomeContainerContext);
+const HomeContainer: FC<HomeContainerPropType> = ({ name }) => {
+  const EventBus = useContext(EventBusContext);
+  const {} = useContext(HomeContainerContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const cleanup = EventBus.on("click", (payload) => {
       console.log(payload);
     });

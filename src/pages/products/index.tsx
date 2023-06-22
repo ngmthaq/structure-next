@@ -1,7 +1,7 @@
+import { FC } from "react";
 import AnchorLink from "@/components/AnchorLink";
-import React from "react";
 
-const Products: React.FC = () => {
+const Products: FC = () => {
   return (
     <div>
       <h1>Products</h1>

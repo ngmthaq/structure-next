@@ -1,38 +1,38 @@
-import React from "react";
+import { FC, Fragment, ReactNode } from "react";
 import Head from "next/head";
 
-const BaseLayout: React.FC<BaseLayoutPropType> = ({ title, description, image, children }) => {
+const BaseLayout: FC<BaseLayoutPropType> = ({ title, description, image, children }) => {
   return (
-    <React.Fragment>
+    <Fragment>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
 
         {title && (
-          <React.Fragment>
+          <Fragment>
             <title>{title}</title>
             <meta name="title" content={title} />
             <meta property="og:title" content={title} />
-          </React.Fragment>
+          </Fragment>
         )}
 
         {description && (
-          <React.Fragment>
+          <Fragment>
             <meta name="description" content={description} />
             <meta property="og:description" content={description} />
-          </React.Fragment>
+          </Fragment>
         )}
 
         {image && (
-          <React.Fragment>
+          <Fragment>
             <meta name="image" content={image} />
             <meta property="og:image" content={image} />
-          </React.Fragment>
+          </Fragment>
         )}
       </Head>
       {children}
-    </React.Fragment>
+    </Fragment>
   );
 };
 
@@ -42,5 +42,5 @@ export type BaseLayoutPropType = {
   title?: string;
   description?: string;
   image?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 };

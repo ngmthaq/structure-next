@@ -1,19 +1,21 @@
-import React from "react";
+import { FC, createRef, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Element } from "@/helpers/element.helper";
 
-const AnchorLink: React.FC<AnchorLinkPropType> = ({ children, path, className, loading }) => {
-  const ref = React.createRef<HTMLAnchorElement>();
+const AnchorLink: FC<AnchorLinkPropType> = ({ children, path, className, loading }) => {
+  const ref = createRef<HTMLAnchorElement>();
   const router = useRouter();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (ref.current) {
       ref.current.addEventListener("click", (e) => {
         e.preventDefault();
-        Element.openSpinnerLoading();
-        router.push(path).then(() => {
-          Element.closeSpinnerLoading();
-        });
+        if (router.pathname !== path) {
+          if (loading) Element.openSpinnerLoading();
+          router.push(path).then(() => {
+            if (loading) Element.closeSpinnerLoading();
+          });
+        }
       });
     }
   }, [ref]);
