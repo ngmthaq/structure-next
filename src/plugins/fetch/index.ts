@@ -99,23 +99,48 @@ abstract class Fetch {
     }
   }
 
-  public async get(uri: string, params: HttpParams | null = null, headers: HttpHeaders = new Headers(), configs: HttpRequestInit = {}): Promise<Response> {
+  public async get(
+    uri: string,
+    params: HttpParams | null = null,
+    headers: HttpHeaders = new Headers(),
+    configs: HttpRequestInit = {},
+  ): Promise<Response> {
     return this.fetch(uri, "GET", params, null, headers, configs);
   }
 
-  public async post(uri: string, body: HttpBody | null = null, headers: HttpHeaders = new Headers(), configs: HttpRequestInit = {}): Promise<Response> {
+  public async post(
+    uri: string,
+    body: HttpBody | null = null,
+    headers: HttpHeaders = new Headers(),
+    configs: HttpRequestInit = {},
+  ): Promise<Response> {
     return this.fetch(uri, "POST", null, body, headers, configs);
   }
 
-  public async put(uri: string, body: HttpBody | null = null, headers: HttpHeaders = new Headers(), configs: HttpRequestInit = {}): Promise<Response> {
+  public async put(
+    uri: string,
+    body: HttpBody | null = null,
+    headers: HttpHeaders = new Headers(),
+    configs: HttpRequestInit = {},
+  ): Promise<Response> {
     return this.fetch(uri, "PUT", null, body, headers, configs);
   }
 
-  public async patch(uri: string, body: HttpBody | null = null, headers: HttpHeaders = new Headers(), configs: HttpRequestInit = {}): Promise<Response> {
+  public async patch(
+    uri: string,
+    body: HttpBody | null = null,
+    headers: HttpHeaders = new Headers(),
+    configs: HttpRequestInit = {},
+  ): Promise<Response> {
     return this.fetch(uri, "PATCH", null, body, headers, configs);
   }
 
-  public async delete(uri: string, body: HttpBody | null = null, headers: HttpHeaders = new Headers(), configs: HttpRequestInit = {}): Promise<Response> {
+  public async delete(
+    uri: string,
+    body: HttpBody | null = null,
+    headers: HttpHeaders = new Headers(),
+    configs: HttpRequestInit = {},
+  ): Promise<Response> {
     return this.fetch(uri, "DELETE", null, body, headers, configs);
   }
 }

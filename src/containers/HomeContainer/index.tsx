@@ -20,7 +20,11 @@ const HomeContainer: FC<HomeContainerPropType> = ({ name }) => {
   }, []);
 
   return (
-    <BaseLayout title="Create Next App" description="The most important thing is how the snippet looks." image="/favicon.ico">
+    <BaseLayout
+      title="Create Next App"
+      description="The most important thing is how the snippet looks."
+      image="/favicon.ico"
+    >
       <HomeContainerProvider>
         <h1 className={style.heading}>
           Helo {name} <i className="bi bi-alarm-fill"></i>

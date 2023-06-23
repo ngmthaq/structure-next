@@ -39,4 +39,12 @@ export type Notification = {
   isOpen: boolean;
 };
 
-export type NotificationVariants = "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark";
+export type NotificationVariants =
+  | "primary"
+  | "secondary"
+  | "success"
+  | "danger"
+  | "warning"
+  | "info"
+  | "light"
+  | "dark";
