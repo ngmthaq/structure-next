@@ -4,10 +4,24 @@ import { EventBusContext } from "@/plugins/bus/EventBusProvider";
 import { HomeContainerContext, HomeContainerProvider } from "./HomeContainer.context";
 import style from "./HomeContainer.module.scss";
 import AnchorLink from "@/components/AnchorLink";
+import { Element } from "@/helpers/element.helper";
 
 const HomeContainer: FC<HomeContainerPropType> = ({ name }) => {
   const EventBus = useContext(EventBusContext);
   const {} = useContext(HomeContainerContext);
+
+  const onAppendNotification = () => {
+    Element.appendNotification({
+      message: "Notification",
+      variant: "primary",
+      onClick: () => {
+        console.log("On Click");
+      },
+      onClose: () => {
+        console.log("On Close");
+      },
+    });
+  };
 
   useEffect(() => {
     const cleanup = EventBus.on("click", (payload) => {
@@ -32,6 +46,7 @@ const HomeContainer: FC<HomeContainerPropType> = ({ name }) => {
         <AnchorLink path="/products" loading>
           Products
         </AnchorLink>
+        <button onClick={onAppendNotification}>Append Notification</button>
       </HomeContainerProvider>
     </BaseLayout>
   );

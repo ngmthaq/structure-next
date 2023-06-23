@@ -1,6 +1,7 @@
 import { AppConst } from "@/constants/app.const";
 import { eventBus } from "@/plugins/bus/EventBusProvider";
 import { SPINNER_LOADING_ID } from "@/components/SpinnerLoading";
+import { NotificationConfig } from "@/components/NotificationContainer/components/NotificationItem";
 
 export class Element {
   public static openSpinnerLoading() {
@@ -23,5 +24,9 @@ export class Element {
 
   public static closeProgressLoading() {
     eventBus.emit<boolean>(AppConst.eventBus.openProgressLoading, false);
+  }
+
+  public static appendNotification(notification: NotificationConfig) {
+    eventBus.emit<NotificationConfig>(AppConst.eventBus.appendNotification, notification);
   }
 }

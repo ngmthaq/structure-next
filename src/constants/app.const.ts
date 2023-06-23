@@ -13,5 +13,6 @@ export class AppConst {
 
   public static eventBus = {
     openProgressLoading: "openProgressLoading",
+    appendNotification: "appendNotification",
   };
 }

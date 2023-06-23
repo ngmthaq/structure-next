@@ -7,7 +7,12 @@ export const getServerSideProps: GetServerSideProps<{ name: string }> = async ()
   const baseApi = new BaseApi();
   const response = await baseApi.get("/hello");
   const data = await response.json();
-  return { props: { name: data.name } };
+
+  return {
+    props: {
+      name: data.name,
+    },
+  };
 };
 
 const Home: FC<InferGetServerSidePropsType<typeof getServerSideProps>> = ({ name }) => {

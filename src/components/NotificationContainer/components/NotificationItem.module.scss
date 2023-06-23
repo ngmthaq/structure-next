@@ -1,0 +1,29 @@
+@import "../../../assets/variables";
+@import "../../../assets/mixins";
+
+.container {
+  padding: 8px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  & .message {
+    flex: 9;
+  }
+
+  & .button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: all 0.1s ease-in-out;
+    flex-shrink: 0;
+
+    &:hover {
+      background-color: rgba($color: $white, $alpha: 0.4);
+    }
+  }
+}
